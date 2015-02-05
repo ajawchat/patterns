@@ -12,6 +12,9 @@ public class PizzaShop {
 		
 		Pizza pizza = null;
 		
+		// Create an instance of the PizzaSimpleFactory Method
+		PizzaSimpleFactory pizzaFactory = new PizzaSimpleFactory();
+		
 		Scanner scanInput = new Scanner(System.in);
 		String pizzaType = null;
 		
@@ -20,14 +23,8 @@ public class PizzaShop {
 			pizzaType = scanInput.nextLine();
 		}
 		
-		if(pizzaType.equals("Cheese"))
-			pizza = new CheesePizza();
-		else if (pizzaType.equals("Veggie"))
-			pizza = new VeggiePizza();
-		else
-			System.out.println("Please enter a valid option");
-		
-		
+		// The Factory method orderPizza returns specific object of pizza, which can then be worked on
+		pizza = pizzaFactory.orderPizza(pizzaType);
 		
 		// These are the methods which are constant
 		pizza.preparePizza();
