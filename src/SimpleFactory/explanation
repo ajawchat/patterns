@@ -1,0 +1,8 @@
+Uses of Factory Method
+Suppose you have an application, a pizza shop, and it lets the client program select pizzas, based on which new objects are created in the client program. It seems there is no problem and you have it working very well for 5 pizza types.
+
+But, if in the future, 5 more pizzas are added to the menu, we have to modify the client code [code that runs on an endpoint] and write the code for creating new objects. Also, the client code would specify that there are classes like CheesePizza, VeggiePizza and the underlying methods being called. That would not be secure.
+
+For that reason, we get the methods in a superclass/ interface and extend it to the classes that need to be instantiated. Also, we remove the object creation logic away from the client program and place it in a different factory class. The factory class would return the specific object based on user input. The client program does not need to know what kind of classes are out there. 
+
+Check this link: http://www.codeproject.com/Tips/469453/Illustrating-Factory-pattern-with-a-very-basic-exa
