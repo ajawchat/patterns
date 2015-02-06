@@ -3,40 +3,57 @@
 
 package SimpleFactory;
 
+
 // This is an abstract class. A general pizza type which will be inherited by specific pizza classes.
 public abstract class Pizza {
 	String name;
 	
-	public abstract void preparePizza();
+	void preparePizza(){
+		System.out.println("Preparing Pizza");;
+	}
 	
-	public abstract void bakePizza();
+	void bakePizza(){
+		System.out.println("Baking Pizza");;
+	}
 	
-	public abstract void cutPizza();
-
+	void cutPizza(){
+		System.out.println("Cutting Pizza in diagonals");
+	}
+	
+	
+	// Instead of a factory method, we create an abstract method here itself. 
+	
 }
 
 
 
 //****************************************************************
 
-class CheesePizza extends Pizza{
+class NYCheesePizza extends Pizza{
 
-	@Override
-	public void preparePizza() {
-		System.out.println("Preparing Cheese Pizza");
-		
-	}
+	
+	
+}
 
-	@Override
-	public void bakePizza() {
-		System.out.println("Baking Cheese Pizza");
-		
-	}
 
-	@Override
-	public void cutPizza() {
-		System.out.println("Cutting Cheese Pizza");
-		
+//****************************************************************
+
+class NYVeggiePizza extends Pizza{
+
+	
+	
+}
+
+
+
+//**********************************************************
+
+class ChicagoCheesePizza extends Pizza{
+
+	
+	
+	public void cutPizza(){
+		System.out.println("Cutting Pizza in rectangles");
 	}
 	
 }
@@ -44,24 +61,12 @@ class CheesePizza extends Pizza{
 
 //**********************************************************
 
-class VeggiePizza extends Pizza{
+class ChicagoVeggiePizza extends Pizza{
 
-	@Override
-	public void preparePizza() {
-		System.out.println("Preparing Veggie Pizza");
-		
-	}
-
-	@Override
-	public void bakePizza() {
-		System.out.println("Baking Veggie Pizza");
-		
-	}
-
-	@Override
-	public void cutPizza() {
-		System.out.println("Cutting Veggie Pizza");
-		
+	
+	
+	public void cutPizza(){
+		System.out.println("Cutting Pizza in rectangles");
 	}
 	
 }

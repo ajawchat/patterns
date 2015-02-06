@@ -6,31 +6,72 @@ package SimpleFactory;
 
 import java.util.Scanner;
 
-public class PizzaShop {
+public abstract class PizzaShop {
+		
 	
-	public static void main(String[] args) {
+	public Pizza orderPizza(String pizzaType){
 		
 		Pizza pizza = null;
 		
-		// Create an instance of the PizzaSimpleFactory Method
-		PizzaSimpleFactory pizzaFactory = new PizzaSimpleFactory();
+		pizza = createPizza(pizzaType);
 		
-		Scanner scanInput = new Scanner(System.in);
-		String pizzaType = null;
-		
-		System.out.println("Enter choice of Pizza: ");
-		if(scanInput.hasNextLine()){
-			pizzaType = scanInput.nextLine();
-		}
-		
-		// The Factory method orderPizza returns specific object of pizza, which can then be worked on
-		pizza = pizzaFactory.orderPizza(pizzaType);
-		
-		// These are the methods which are constant
 		pizza.preparePizza();
 		pizza.bakePizza();
 		pizza.cutPizza();
 
+		
+		return pizza;
 	}
+	
+	public abstract Pizza createPizza(String type);
+	
 
 }
+
+
+
+
+
+// While making a franchise of PizzaShop, we would need the orderPizza and createPizza under these objects
+
+class NYPizzaShop extends PizzaShop{
+
+	@Override
+	public Pizza createPizza(String pizzaType) {
+		Pizza pizza = null;
+		
+		if(pizzaType.equals("Cheese"))
+			pizza = new NYCheesePizza();
+		else if (pizzaType.equals("Veggie"))
+			pizza = new NYVeggiePizza();
+		else
+			System.out.println("Please enter a valid option");
+		
+		
+		return pizza;
+	}
+	
+}
+
+//**********************************************
+
+class ChicagoPizzaShop extends PizzaShop{
+
+	@Override
+	public Pizza createPizza(String pizzaType) {
+		Pizza pizza = null;
+		
+		if(pizzaType.equals("Cheese"))
+			pizza = new ChicagoCheesePizza();
+		else if (pizzaType.equals("Veggie"))
+			pizza = new ChicagoVeggiePizza();
+		else
+			System.out.println("Please enter a valid option");
+		
+		
+		return pizza;
+	}
+	
+}
+
+
