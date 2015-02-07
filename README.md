@@ -8,4 +8,6 @@ Patterns in this repo
 * Decorator
 * Simple Factory [not a pattern]
 * Factory pattern
+* Singleton
+* Command [Message queuing back-end application based on user preferences]
 
