@@ -42,3 +42,22 @@ class Email implements IMessageType{
 		
 	}
 }
+
+
+
+//***************************************
+// Class to represent that user does not want any messages
+class NoMessage implements IMessageType{
+
+	private String name;
+	private String contact;
+	
+	public NoMessage(String name, String contact){
+		this.name = name;
+		this.contact = contact;
+	}
+	
+	public void sendMessage() {
+		
+	}
+}
