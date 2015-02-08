@@ -12,21 +12,16 @@ public class MessageEngineTest {
 							 {"C","7676","NA"},
 							 {"D","c@hsd.com","EMAIL"}};
 		
+		// Create an instance of the interface for reference
 		IMessageType personObj;
+		
+		// Create an instance of the Factory Class to dynamically allocate the object type
+		MessageTypeFactory messageTypeFact = new MessageTypeFactory();
+		
 		for(int i=0;i<dbList.length;i++){
-			personObj = null;
 			
-			if(dbList[i][2].equals("SMS"))
-				personObj = new SMS(dbList[i][0],dbList[i][1]);
-			else if(dbList[i][2].equals("EMAIL"))
-				personObj = new Email(dbList[i][0],dbList[i][1]);
-			else if(dbList[i][2].equals("NA"))
-				personObj = new NoMessage(dbList[i][0],dbList[i][1]);
-			else{
-				System.out.println("Invalid data entry for record No "+i);
-				personObj = new NoMessage(dbList[i][0],dbList[i][1]);
-			}
-			
+			// The client does not need to change if a new preference for receiving messages is added in the future
+			personObj = messageTypeFact.createObject(dbList[i]);			
 			engine1.addMessageObject(personObj);
 		}
 		
