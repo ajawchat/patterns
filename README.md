@@ -10,4 +10,6 @@ Patterns in this repo
 * Factory pattern
 * Singleton
 * Command [Message queuing back-end application based on user preferences]
+* Adapter
+* Facade
 
