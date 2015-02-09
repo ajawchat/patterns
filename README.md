@@ -12,4 +12,5 @@ Patterns in this repo
 * Command [Message queuing back-end application based on user preferences]
 * Adapter
 * Facade
+* MVC architecture [simple app to increment counter in Java, AWT]
 
