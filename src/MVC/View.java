@@ -28,12 +28,12 @@ public class View implements java.util.Observer {
 		frame.add("Center",textField);
 		
 		Panel myPanel = new Panel();
-		button = new Button("Press Me");
+		button = new Button("Increment");
 		myPanel.add(button);
 		frame.add("South",myPanel);
 		
 		frame.addWindowListener(new CloseListener());
-		frame.setSize(200,100);
+		frame.setSize(200,200);
 		frame.setLocation(100,100);
 		frame.setVisible(true);
 		

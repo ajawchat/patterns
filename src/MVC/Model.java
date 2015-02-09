@@ -17,6 +17,7 @@ public class Model extends java.util.Observable {
 		this.cntr = val;
 		System.out.println("Model : initialized...calling setChanged()");
 		setChanged();
+		notifyObservers(cntr);
 	}
 	
 	// Function to increment the value by 1
